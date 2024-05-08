@@ -7,16 +7,47 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.http.HttpClient;
+import java.util.List;
+
+import com.api.domain.Coin;
+import com.api.domain.MarketEvent;
 
 import javax.xml.crypto.AlgorithmMethod;
 
 import com.auth0.jwt.algorithms.Algorithm;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 
 import okhttp3.OkHttp;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+
 
 
 public class UpbitAPI{
+	
+	String url = "https://api.upbit.com/v1/";
+	
+	
+	
+	public List<Coin> all_coins(String query) throws IOException {
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<Coin>>() {}.getType());
+	}
+}
+	/*
+	 
 	OkHttpClient client = new OkHttpClient();
 	URL baseURL=null;
 	
@@ -45,4 +76,4 @@ public class UpbitAPI{
 		
 	}
 	
-}
+}*/
