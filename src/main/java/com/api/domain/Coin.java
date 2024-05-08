@@ -1,6 +1,5 @@
 package com.api.domain;
 
-import com.api.service.MarketEvent;
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
@@ -113,7 +112,7 @@ public class Coin {
 				this.concentrationOfSmallAccounts = concentrationOfSmallAccounts;
 			}
 		}
-		@Override
+		/*@Override
 		public String toString() {
 			String market;
 			String name_kr;
@@ -129,5 +128,5 @@ public class Coin {
 		            ", warning=" + warning +
 		            ", caution=" + caution +
 		            '}';
-		}
+		}*/
 }

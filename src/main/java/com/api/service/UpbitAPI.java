@@ -10,7 +10,6 @@ import java.net.http.HttpClient;
 import java.util.List;
 
 import com.api.domain.Coin;
-import com.api.domain.MarketEvent;
 
 import javax.xml.crypto.AlgorithmMethod;
 
