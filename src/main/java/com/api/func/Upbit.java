@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 
 import com.api.domain.Coin;
+import com.api.domain.Ticker;
 import com.api.service.UpbitAPI;
 
 @Controller
@@ -17,5 +18,12 @@ public class Upbit {
 		List<Coin> coin_list = api.all_coins("market/all");
 		
 		return coin_list;
+	}
+	
+	public Ticker getTicker(String query) throws IOException {
+		UpbitAPI api = new UpbitAPI();
+		Ticker ticker = api.ticker("ticker");
+		
+		return ticker;
 	}
 }

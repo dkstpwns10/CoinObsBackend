@@ -10,6 +10,7 @@ import java.net.http.HttpClient;
 import java.util.List;
 
 import com.api.domain.Coin;
+import com.api.domain.Ticker;
 
 import javax.xml.crypto.AlgorithmMethod;
 
@@ -43,6 +44,20 @@ public class UpbitAPI{
 
 		Response response = client.newCall(request).execute();
 		return new Gson().fromJson(response.body().string(), new TypeToken<List<Coin>>() {}.getType());
+	}
+	
+	public Ticker ticker(String query) throws IOException {
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<Ticker>() {}.getType());
+	
 	}
 }
 	/*

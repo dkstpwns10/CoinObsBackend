@@ -112,21 +112,5 @@ public class Coin {
 				this.concentrationOfSmallAccounts = concentrationOfSmallAccounts;
 			}
 		}
-		/*@Override
-		public String toString() {
-			String market;
-			String name_kr;
-			String name_en;
-			Boolean warning;
-			MarketEvent caution;
-				  
-			
-		    return "Coin{" +
-		            "market='" + market + '\'' +
-		            ", name_kr='" + name_kr + '\'' +
-		            ", name_en='" + name_en + '\'' +
-		            ", warning=" + warning +
-		            ", caution=" + caution +
-		            '}';
-		}*/
+		
 }
