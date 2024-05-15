@@ -1,4 +1,4 @@
-package com.api.service;
+package com.api.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,15 +7,29 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.http.HttpClient;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
+import com.api.domain.Candle;
+import com.api.domain.Candle.DayCandle;
+import com.api.domain.Candle.MinuteCandle;
 import com.api.domain.Coin;
 import com.api.domain.Ticker;
 
 import javax.xml.crypto.AlgorithmMethod;
 
 import com.auth0.jwt.algorithms.Algorithm;
+import com.fasterxml.jackson.core.JacksonException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,8 +43,7 @@ import okhttp3.Response;
 
 public class UpbitAPI{
 	
-	String url = "https://api.upbit.com/v1/";
-	
+	private String url = "https://api.upbit.com/v1/";
 	
 	
 	public List<Coin> all_coins(String query) throws IOException {
@@ -46,7 +59,7 @@ public class UpbitAPI{
 		return new Gson().fromJson(response.body().string(), new TypeToken<List<Coin>>() {}.getType());
 	}
 	
-	public Ticker ticker(String query) throws IOException {
+	public List<Ticker> ticker(String query) throws IOException, NumberFormatException {
 		OkHttpClient client = new OkHttpClient();
 
 		Request request = new Request.Builder()
@@ -54,40 +67,24 @@ public class UpbitAPI{
 		  .get()
 		  .addHeader("accept", "application/json")
 		  .build();
-
+		
 		Response response = client.newCall(request).execute();
-		return new Gson().fromJson(response.body().string(), new TypeToken<Ticker>() {}.getType());
+		
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<Ticker>>() {}.getType());
 	
+	}
+	
+	public List<MinuteCandle> minuteCandle(String query) throws IOException{
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+		
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<Candle.MinuteCandle>>() {}.getType());
+		
 	}
 }
-	/*
-	 
-	OkHttpClient client = new OkHttpClient();
-	URL baseURL=null;
-	
-	String url = "https://api.upbit.com/v1/";
-	
-	public HttpURLConnection getConn(String query) {
-		baseURL = new URL(url);
-		Algorithm algorithm = Algorithm.HMAC256("secretKey");
-		
-		try {
-			HttpURLConnection conn = (HttpURLConnection) baseURL.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Authorization", authToken);
-            conn.setRequestProperty("Content-Type", "application/json");
-            int responseResult = conn.getResponseCode();
-            if(responseResult == HttpURLConnection.HTTP_OK) {
-            	BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            	String inputLine;
-            	System.out.println();
-            }
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		return conn;
-		
-	}
-	
-}*/
