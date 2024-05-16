@@ -16,6 +16,8 @@ import java.util.Locale;
 import com.api.domain.Candle;
 import com.api.domain.Candle.DayCandle;
 import com.api.domain.Candle.MinuteCandle;
+import com.api.domain.Candle.MonthCandle;
+import com.api.domain.Candle.WeekCandle;
 import com.api.domain.Coin;
 import com.api.domain.Ticker;
 
@@ -87,4 +89,47 @@ public class UpbitAPI{
 		return new Gson().fromJson(response.body().string(), new TypeToken<List<Candle.MinuteCandle>>() {}.getType());
 		
 	}
+	
+	public List<DayCandle> dayCandle(String query) throws IOException{
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+		
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<DayCandle>>() {}.getType());
+		
+	}
+	
+	public List<WeekCandle> weekCandle(String query) throws IOException{
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+		
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<WeekCandle>>() {}.getType());
+		
+	}
+	
+	public List<MonthCandle> monthCandle(String query) throws IOException{
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+		  .url(url+query)
+		  .get()
+		  .addHeader("accept", "application/json")
+		  .build();
+		
+		Response response = client.newCall(request).execute();
+		return new Gson().fromJson(response.body().string(), new TypeToken<List<MonthCandle>>() {}.getType());
+		
+	}
+	
 }

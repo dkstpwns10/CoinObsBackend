@@ -1,5 +1,7 @@
 package com.api.domain;
 
+import java.math.BigDecimal;
+
 public class Candle {
 	
 	public class MinuteCandle{
@@ -32,26 +34,26 @@ public class Candle {
 		public void setCandle_date_time_kst(String candle_date_time_kst) {
 			this.candle_date_time_kst = candle_date_time_kst;
 		}
-		public Double getOpening_price() {
-			return opening_price;
+		public BigDecimal getOpening_price() {
+			return new BigDecimal(opening_price);
 		}
 		public void setOpening_price(Double opening_price) {
 			this.opening_price = opening_price;
 		}
-		public Double getHigh_price() {
-			return high_price;
+		public BigDecimal getHigh_price() {
+			return new BigDecimal(high_price);
 		}
 		public void setHigh_price(Double high_price) {
 			this.high_price = high_price;
 		}
-		public Double getLow_price() {
-			return low_price;
+		public BigDecimal getLow_price() {
+			return new BigDecimal(low_price);
 		}
 		public void setLow_price(Double low_price) {
 			this.low_price = low_price;
 		}
-		public Double getTrade_price() {
-			return trade_price;
+		public BigDecimal getTrade_price() {
+			return new BigDecimal(trade_price);
 		}
 		public void setTrade_price(Double trade_price) {
 			this.trade_price = trade_price;
@@ -62,8 +64,8 @@ public class Candle {
 		public void setTimestamp(long timestamp) {
 			this.timestamp = timestamp;
 		}
-		public Double getCandle_acc_trade_price() {
-			return candle_acc_trade_price;
+		public BigDecimal getCandle_acc_trade_price() {
+			return new BigDecimal(candle_acc_trade_price);
 		}
 		public void setCandle_acc_trade_price(Double candle_acc_trade_price) {
 			this.candle_acc_trade_price = candle_acc_trade_price;
@@ -116,26 +118,26 @@ public class Candle {
 		public void setCandle_date_time_kst(String candle_date_time_kst) {
 			this.candle_date_time_kst = candle_date_time_kst;
 		}
-		public Double getOpening_price() {
-			return opening_price;
+		public BigDecimal getOpening_price() {
+			return new BigDecimal(opening_price);
 		}
 		public void setOpening_price(Double opening_price) {
 			this.opening_price = opening_price;
 		}
-		public Double getHigh_price() {
-			return high_price;
+		public BigDecimal getHigh_price() {
+			return new BigDecimal(high_price);
 		}
 		public void setHigh_price(Double high_price) {
 			this.high_price = high_price;
 		}
-		public Double getLow_price() {
-			return low_price;
+		public BigDecimal getLow_price() {
+			return new BigDecimal(low_price);
 		}
 		public void setLow_price(Double low_price) {
 			this.low_price = low_price;
 		}
-		public Double getTrade_price() {
-			return trade_price;
+		public BigDecimal getTrade_price() {
+			return new BigDecimal(trade_price);
 		}
 		public void setTrade_price(Double trade_price) {
 			this.trade_price = trade_price;
@@ -146,8 +148,8 @@ public class Candle {
 		public void setTimestamp(long timestamp) {
 			this.timestamp = timestamp;
 		}
-		public Double getCandle_acc_trade_price() {
-			return candle_acc_trade_price;
+		public BigDecimal getCandle_acc_trade_price() {
+			return new BigDecimal(candle_acc_trade_price);
 		}
 		public void setCandle_acc_trade_price(Double candle_acc_trade_price) {
 			this.candle_acc_trade_price = candle_acc_trade_price;
@@ -158,26 +160,26 @@ public class Candle {
 		public void setCandle_acc_trade_volume(Double candle_acc_trade_volume) {
 			this.candle_acc_trade_volume = candle_acc_trade_volume;
 		}
-		public Double getPrev_closing_price() {
-			return prev_closing_price;
+		public BigDecimal getPrev_closing_price() {
+			return new BigDecimal(prev_closing_price);
 		}
 		public void setPrev_closing_price(Double prev_closing_price) {
 			this.prev_closing_price = prev_closing_price;
 		}
-		public Double getChange_price() {
-			return change_price;
+		public BigDecimal getChange_price() {
+			return new BigDecimal(change_price);
 		}
 		public void setChange_price(Double change_price) {
 			this.change_price = change_price;
 		}
-		public Double getChange_rate() {
-			return change_rate;
+		public BigDecimal getChange_rate() {
+			return new BigDecimal(change_rate);
 		}
 		public void setChange_rate(Double change_rate) {
 			this.change_rate = change_rate;
 		}
-		public Double getConverted_trade_price() {
-			return converted_trade_price;
+		public BigDecimal getConverted_trade_price() {
+			return new BigDecimal(converted_trade_price);
 		}
 		public void setConverted_trade_price(Double converted_trade_price) {
 			this.converted_trade_price = converted_trade_price;
@@ -215,26 +217,26 @@ public class Candle {
 		public void setCandle_date_time_kst(String candle_date_time_kst) {
 			this.candle_date_time_kst = candle_date_time_kst;
 		}
-		public Double getOpening_price() {
-			return opening_price;
+		public BigDecimal getOpening_price() {
+			return new BigDecimal(opening_price);
 		}
 		public void setOpening_price(Double opening_price) {
 			this.opening_price = opening_price;
 		}
-		public Double getHigh_price() {
-			return high_price;
+		public BigDecimal getHigh_price() {
+			return new BigDecimal(high_price);
 		}
 		public void setHigh_price(Double high_price) {
 			this.high_price = high_price;
 		}
-		public Double getLow_price() {
-			return low_price;
+		public BigDecimal getLow_price() {
+			return new BigDecimal(low_price);
 		}
 		public void setLow_price(Double low_price) {
 			this.low_price = low_price;
 		}
-		public Double getTrade_price() {
-			return trade_price;
+		public BigDecimal getTrade_price() {
+			return new BigDecimal(trade_price);
 		}
 		public void setTrade_price(Double trade_price) {
 			this.trade_price = trade_price;
@@ -245,8 +247,8 @@ public class Candle {
 		public void setTimestamp(long timestamp) {
 			this.timestamp = timestamp;
 		}
-		public Double getCandle_acc_trade_price() {
-			return candle_acc_trade_price;
+		public BigDecimal getCandle_acc_trade_price() {
+			return new BigDecimal(candle_acc_trade_price);
 		}
 		public void setCandle_acc_trade_price(Double candle_acc_trade_price) {
 			this.candle_acc_trade_price = candle_acc_trade_price;
@@ -296,26 +298,26 @@ public class Candle {
 		public void setCandle_date_time_kst(String candle_date_time_kst) {
 			this.candle_date_time_kst = candle_date_time_kst;
 		}
-		public Double getOpening_price() {
-			return opening_price;
+		public BigDecimal getOpening_price() {
+			return new BigDecimal(opening_price);
 		}
 		public void setOpening_price(Double opening_price) {
 			this.opening_price = opening_price;
 		}
-		public Double getHigh_price() {
-			return high_price;
+		public BigDecimal getHigh_price() {
+			return new BigDecimal(high_price);
 		}
 		public void setHigh_price(Double high_price) {
 			this.high_price = high_price;
 		}
-		public Double getLow_price() {
-			return low_price;
+		public BigDecimal getLow_price() {
+			return new BigDecimal(low_price);
 		}
 		public void setLow_price(Double low_price) {
 			this.low_price = low_price;
 		}
-		public Double getTrade_price() {
-			return trade_price;
+		public BigDecimal getTrade_price() {
+			return new BigDecimal(trade_price);
 		}
 		public void setTrade_price(Double trade_price) {
 			this.trade_price = trade_price;
@@ -326,8 +328,8 @@ public class Candle {
 		public void setTimestamp(long timestamp) {
 			this.timestamp = timestamp;
 		}
-		public Double getCandle_acc_trade_price() {
-			return candle_acc_trade_price;
+		public BigDecimal getCandle_acc_trade_price() {
+			return new BigDecimal(candle_acc_trade_price);
 		}
 		public void setCandle_acc_trade_price(Double candle_acc_trade_price) {
 			this.candle_acc_trade_price = candle_acc_trade_price;
